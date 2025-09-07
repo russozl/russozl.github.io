@@ -1,10 +1,14 @@
 # Mazda RX-7 FC
 
-Site simples sobre a história do Mazda RX-7 FC, segunda geração do icônico esportivo japonês.
+Site sobre a história do Mazda RX-7 FC, segunda geração do icônico esportivo japonês.
 
 ## Sobre
 
 O Mazda RX-7 FC foi produzido entre 1985 e 1992, sendo a segunda geração do RX-7. Este modelo manteve o motor rotativo Wankel característico da linha.
+
+## Projeto Especial
+
+Este site apresenta um projeto especial de restauração de um RX-7 FC que veio direto do Japão, de Shibuya, sem passar pelo Paraguai. É uma versão especial de 10 anos da Mazda, restaurada do zero por pai e filho.
 
 ## Especificações
 
@@ -21,4 +25,4 @@ O Mazda RX-7 FC foi produzido entre 1985 e 1992, sendo a segunda geração do RX
 
 ## Como visualizar
 
-Abra o arquivo `index.html` no seu navegador ou acesse via GitHub Pages.
+Acesse: https://russozl.github.io
