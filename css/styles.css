@@ -10,6 +10,25 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="%23e74c3c" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="%23e74c3c"/><line x1="16" y1="2" x2="16" y2="6" stroke="%23e74c3c" stroke-width="2"/><line x1="16" y1="26" x2="16" y2="30" stroke="%23e74c3c" stroke-width="2"/><line x1="2" y1="16" x2="6" y2="16" stroke="%23e74c3c" stroke-width="2"/><line x1="26" y1="16" x2="30" y2="16" stroke="%23e74c3c" stroke-width="2"/></svg>'), auto;
+}
+
+/* Cursor trail effect */
+.cursor-trail {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #e74c3c;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+    animation: trail-fade 0.5s ease-out forwards;
+}
+
+@keyframes trail-fade {
+    0% { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.3); }
 }
 
 .container {
@@ -392,4 +411,154 @@ body {
         padding: 20px;
     }
     
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease-out;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rotary-engine {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.rotor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #e74c3c;
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
+}
+
+.rotor:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.rotor:nth-child(2) {
+    animation-delay: 0.3s;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+}
+
+.rotor:nth-child(3) {
+    animation-delay: 0.6s;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-screen p {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Velocímetro Animation */
+.speedometer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.speedometer-circle {
+    width: 100%;
+    height: 100%;
+    border: 8px solid #eee;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.speedometer-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 8px solid #e74c3c;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 50% 0%, 0% 0%, 0% 50%);
+    transition: clip-path 2s ease-in-out;
+}
+
+.speedometer-needle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 80px;
+    background: #e74c3c;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%) rotate(-90deg);
+    transition: transform 2s ease-in-out;
+}
+
+/* Parallax Effect */
+.parallax {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Night Mode */
+body.night-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+body.night-mode .hero {
+    background: linear-gradient(135deg, #000 0%, #333 100%);
+}
+
+body.night-mode .section {
+    background-color: #1a1a1a;
+}
+
+body.night-mode .section.bg-light {
+    background-color: #2d2d2d;
+}
+
+body.night-mode .spec-card {
+    background: #333;
+    color: #fff;
+}
+
+/* Konami Code Easter Egg */
+.konami-active {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }
