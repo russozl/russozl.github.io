@@ -260,6 +260,14 @@ body {
     align-items: start;
 }
 
+/* Seção do MX3 */
+.mx3-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
 .project-text h3 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -285,6 +293,31 @@ body {
     color: #555;
 }
 
+.mx3-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 30px 0 15px 0;
+    color: #e74c3c;
+}
+
+.mx3-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.mx3-text ul {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.mx3-text li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
 .project-image {
     position: relative;
 }
@@ -300,12 +333,117 @@ body {
     transform: scale(1.02);
 }
 
+.mx3-image {
+    position: relative;
+}
+
+.mx3-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.mx3-image img:hover {
+    transform: scale(1.02);
+}
+
 /* Galeria */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
+}
+
+/* Galeria Nova - Fundo Escuro */
+.gallery-dark {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+}
+
+.gallery-dark h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.gallery-simple {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+.gallery-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gallery-item-simple {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.gallery-item-simple:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.gallery-item-simple img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item-simple:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-description {
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gallery-description h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0 15px 0;
+    color: #e74c3c;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.gallery-description h3:first-child {
+    margin-top: 0;
+}
+
+.gallery-description p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.gallery-description ul {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.gallery-description li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .gallery-item {
@@ -381,8 +519,18 @@ body {
         gap: 30px;
     }
     
+    .mx3-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .gallery-simple {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
     
     .section {
@@ -427,6 +575,35 @@ body {
     align-items: center;
     z-index: 10000;
     transition: opacity 0.5s ease-out;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.mazda-logo {
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 120px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    animation: logo-pulse 2s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+    0%, 100% { 
+        opacity: 0.8; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.05); 
+    }
 }
 
 #loading-screen.hidden {

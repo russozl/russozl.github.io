@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    const animatedElements = document.querySelectorAll('.spec-card, .gallery-item, .text-content');
+    const animatedElements = document.querySelectorAll('.spec-card, .gallery-item, .gallery-item-simple, .text-content, .mx3-text, .gallery-description');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
